@@ -1,33 +1,42 @@
 # RSKSevenProject Kernel for ASUS ZenFone Max Pro M1 (X00TD)
 
-Custom 4.4 kernel with overclocking (2.46GHz CPU, 750MHz GPU), KernelSU-Next support, optimized for Android 10.
-
-## Device
-- ASUS ZenFone Max Pro M1 (X00TD)
-- Snapdragon 636 (SDM660)
+Custom kernel for ASUS ZenFone Max Pro M1 (X00TD, Snapdragon 636).
 
 ## Base
-- LineageOS/android_kernel_asus_sdm660 (branch lineage-18.1)
+
+- RyuujiX/android_kernel_asus_sdm660 (branch r7/hmp)
+- Linux 4.4.302
 
 ## Features
-- Overclocking (dalam pengembangan): CPU big 2.46GHz (+11 persen), GPU 750MHz (+15 persen)
-- KernelSU-Next (dalam pengembangan): root via KernelSU-Next dengan manual hook untuk kernel 4.4
-- Branding: RSKSevenProject (4.4.261-RSKSevenProject)
-- Varian: NLV (non-LED vibration) untuk Android 10
+
+- **Overclocking**: CPU big up to 2.46GHz, GPU up to 750MHz (Extreme variant)
+- **KernelSU-Next v3.2.0**: root via KernelSU-Next with manual hooks for kernel 4.4
+- **SCHED_HMP**: proper big.LITTLE scheduler support
+- **Branding**: RSKSevenProject (4.4.302-RSKSevenProject)
+- **Variants**: NLV (non-LED vibration) for Android 10
+- **CPU Governors**: 16 governors (blu_active, alucard, zzmoove, etc.)
+- **I/O Schedulers**: 13 schedulers (anxiety, maple, zen, etc.)
+- **KCAL**: display color calibration
+- **WireGuard**: modern VPN support
+- **Boeffla Wakelock Blocker**: battery saving
+
+## Variants
+
+| Variant | CPU Max | GPU Max | Use Case |
+|---------|---------|---------|----------|
+| Stock | 1.96GHz | 585MHz | Daily, cool |
+| OC | 2.2GHz | 585MHz | Balanced |
+| Extreme | 2.46GHz | 750MHz | Full OC |
 
 ## Status
-DALAM PENGEMBANGAN - versi saat ini bootloop, jangan pakai untuk daily use.
 
-## Cara Build
-    make O=out ARCH=arm64 X00TD_defconfig
-    make O=out ARCH=arm64 -j3 CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnu-
+**STABLE** - Tested on Nusantara Android 10 (NLV). Bluetooth, WiFi, and app installation working.
 
-Hasil: out/arch/arm64/boot/Image.gz-dtb
+## Downloads
 
-## Credit
-- LineageOS - base kernel source
-- osm0sis - AnyKernel3 (xda-developers)
-- KernelSU-Next team - KernelSU-Next
+[GitHub Releases](https://github.com/rusakseven/RSKSevenProject-X00TD/releases/tag/v1.0-stock-extreme-20261007)
 
-## License
-GPLv2 - sesuai lisensi kernel Linux.
+## Credits
+
+- Base: RyuujiX
+- KernelSU-Next: KernelSU-Next team
