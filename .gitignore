@@ -1,0 +1,32 @@
+# Build outputs
+out/
+*.o
+*.ko
+*.mod.c
+*.order
+*.symvers
+Module.symvers
+modules.builtin
+
+# Kernel config
+.config
+.config.old
+include/config/
+include/generated/
+
+# Backup files
+*.bak
+*.bak-*
+*.orig
+*.rej
+
+# DTB compiled
+*.dtb
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Git
+.git/
